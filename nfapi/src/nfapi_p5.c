@@ -464,7 +464,7 @@ static uint8_t pack_param_response(void *msg, uint8_t **ppWritePackedMsg, uint8_
 			pack_tlv(NFAPI_SRS_CONFIG_BANDWIDTH_CONFIGURATION_TAG, &(pNfapiMsg->srs_config.bandwidth_configuration), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
 			pack_tlv(NFAPI_SRS_CONFIG_MAX_UP_PTS_TAG, &(pNfapiMsg->srs_config.max_up_pts), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
 			pack_tlv(NFAPI_SRS_CONFIG_SRS_SUBFRAME_CONFIGURATION_TAG, &(pNfapiMsg->srs_config.srs_subframe_configuration), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
-			pack_tlv(NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &(pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
+			pack_tlv(NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &(pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission), ppWritePackedMsg, end, &pack_uint8_tlv_value) &&
 
 			pack_tlv(NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_UPLINK_RS_HOPPING_TAG, &(pNfapiMsg->uplink_reference_signal_config.uplink_rs_hopping), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
 			pack_tlv(NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_GROUP_ASSIGNMENT_TAG, &(pNfapiMsg->uplink_reference_signal_config.group_assignment), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
@@ -554,7 +554,7 @@ static uint8_t pack_config_request(void *msg, uint8_t **ppWritePackedMsg, uint8_
 			 pack_tlv(NFAPI_SRS_CONFIG_BANDWIDTH_CONFIGURATION_TAG, &(pNfapiMsg->srs_config.bandwidth_configuration), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
 			 pack_tlv(NFAPI_SRS_CONFIG_MAX_UP_PTS_TAG, &(pNfapiMsg->srs_config.max_up_pts), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
 			 pack_tlv(NFAPI_SRS_CONFIG_SRS_SUBFRAME_CONFIGURATION_TAG, &(pNfapiMsg->srs_config.srs_subframe_configuration), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
-			 pack_tlv(NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &(pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
+			 pack_tlv(NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &(pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission), ppWritePackedMsg, end, &pack_uint8_tlv_value) &&
 
 			 pack_tlv(NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_UPLINK_RS_HOPPING_TAG, &(pNfapiMsg->uplink_reference_signal_config.uplink_rs_hopping), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
 			 pack_tlv(NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_GROUP_ASSIGNMENT_TAG, &(pNfapiMsg->uplink_reference_signal_config.group_assignment), ppWritePackedMsg, end, &pack_uint16_tlv_value) &&
@@ -1260,7 +1260,7 @@ static uint8_t unpack_param_response(uint8_t **ppReadPackedMsg, uint8_t *end, vo
 		{ NFAPI_SRS_CONFIG_BANDWIDTH_CONFIGURATION_TAG, &pNfapiMsg->srs_config.bandwidth_configuration, &unpack_uint16_tlv_value},
 		{ NFAPI_SRS_CONFIG_MAX_UP_PTS_TAG, &pNfapiMsg->srs_config.max_up_pts, &unpack_uint16_tlv_value},
 		{ NFAPI_SRS_CONFIG_SRS_SUBFRAME_CONFIGURATION_TAG, &pNfapiMsg->srs_config.srs_subframe_configuration, &unpack_uint16_tlv_value},
-		{ NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission, &unpack_uint16_tlv_value},
+		{ NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission, &unpack_uint8_tlv_value},
 
 		{ NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_UPLINK_RS_HOPPING_TAG, &pNfapiMsg->uplink_reference_signal_config.uplink_rs_hopping, &unpack_uint16_tlv_value},
 		{ NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_GROUP_ASSIGNMENT_TAG, &pNfapiMsg->uplink_reference_signal_config.group_assignment, &unpack_uint16_tlv_value},
@@ -1343,7 +1343,7 @@ static uint8_t unpack_config_request(uint8_t **ppReadPackedMsg, uint8_t *end, vo
 		{ NFAPI_SRS_CONFIG_BANDWIDTH_CONFIGURATION_TAG, &pNfapiMsg->srs_config.bandwidth_configuration, &unpack_uint16_tlv_value},
 		{ NFAPI_SRS_CONFIG_MAX_UP_PTS_TAG, &pNfapiMsg->srs_config.max_up_pts, &unpack_uint16_tlv_value},
 		{ NFAPI_SRS_CONFIG_SRS_SUBFRAME_CONFIGURATION_TAG, &pNfapiMsg->srs_config.srs_subframe_configuration, &unpack_uint16_tlv_value},
-		{ NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission, &unpack_uint16_tlv_value},
+		{ NFAPI_SRS_CONFIG_SRS_ACKNACK_SRS_SIMULTANEOUS_TRANSMISSION_TAG, &pNfapiMsg->srs_config.srs_acknack_srs_simultaneous_transmission, &unpack_uint8_tlv_value},
 
 		{ NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_UPLINK_RS_HOPPING_TAG, &pNfapiMsg->uplink_reference_signal_config.uplink_rs_hopping, &unpack_uint16_tlv_value},
 		{ NFAPI_UPLINK_REFERENCE_SIGNAL_CONFIG_GROUP_ASSIGNMENT_TAG, &pNfapiMsg->uplink_reference_signal_config.group_assignment, &unpack_uint16_tlv_value},
