@@ -706,7 +706,7 @@ typedef struct {
 	nfapi_uint16_tlv_t bandwidth_configuration;
 	nfapi_uint16_tlv_t max_up_pts;
 	nfapi_uint16_tlv_t srs_subframe_configuration;
-	nfapi_uint16_tlv_t srs_acknack_srs_simultaneous_transmission;
+	nfapi_uint8_tlv_t srs_acknack_srs_simultaneous_transmission;
 } nfapi_srs_config_t;
 
 #define NFAPI_SRS_CONFIG_BANDWIDTH_CONFIGURATION_TAG 0x0046
